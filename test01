@@ -1,0 +1,4 @@
+// 测试表达式求值
+print "abc";
+print true;
+print 3*(1+2*(3-1))+2;

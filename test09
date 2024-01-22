@@ -1,0 +1,30 @@
+// 继承
+class A {
+  testFun() {
+    print "class A";
+  }
+}
+
+class B < A {
+}
+
+class C < A {
+  testFun() {
+    print "class C";
+  }
+}
+
+class D < A {
+  testFun() {
+    super.testFun();
+    print "class D";
+  }
+}
+
+A().testFun();
+print "------";
+B().testFun();
+print "------";
+C().testFun();
+print "------";
+D().testFun();

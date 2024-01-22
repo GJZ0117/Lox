@@ -1,0 +1,33 @@
+// 类和实例
+
+class Person {
+  init() {
+    this.name = nil;
+  }
+  sayName() {
+    print this.name;
+  }
+}
+
+Person().sayName();
+var tom = Person();
+tom.name = "Tom";
+tom.sayName();
+
+
+class Foo {
+  init() {
+    print this;
+  }
+
+  testFun() {
+    this.sayHello();
+  }
+
+  sayHello() {
+    print "hello world!";
+  }
+}
+
+var foo = Foo();
+foo.testFun();

@@ -1,0 +1,3 @@
+// 条件执行、逻辑操作符、分支控制流
+print "hello" or 2;
+print nil or "yes";

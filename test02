@@ -1,0 +1,17 @@
+// 测试变量的声明、赋值
+
+// print str;
+var str;
+print str;
+str = "string";
+print str;
+
+var a = 1;
+var b = 2;
+print a + b;
+
+a = 2;
+print a + b;
+
+var c = a + b;
+print c;

@@ -1,0 +1,19 @@
+// 局部函数和闭包
+
+fun makeCounter() {
+  var i = 0;
+  fun count() {
+    i = i + 1;
+    print i;
+  }
+  return count;
+}
+
+makeCounter()();
+makeCounter()();
+
+print "------";
+
+var counter = makeCounter();
+counter();
+counter();
