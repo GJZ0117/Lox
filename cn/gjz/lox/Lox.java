@@ -11,7 +11,9 @@ import java.util.List;
 
 /**
  * 进入 out/production/lox 目录下
- * 执行 java cn.gjz.lox.Lox /Users/gjz/Documents/idea-project/lox/src/test 测试
+ * 测试:
+ *  解释源代码程序 java cn.gjz.lox.Lox /Users/gjz/Documents/idea-project/lox/src/test
+ *  命令行交互的方式启动解释器 java cn.gjz.lox.Lox
  */
 
 public class Lox {
