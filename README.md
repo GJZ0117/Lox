@@ -19,4 +19,6 @@
 **使用方法：**
 + 创建Lox语言源代码文件，与`test01`等测试文件置于同一目录下
 + 在IDEA中编译整个项目(build project)，生成`out/`目录
-+ 进入`out/production/lox`目录，使用命令`java cn.gjz.lox.Lox /Users/gjz/Documents/idea-project/lox/src/testFile`解释创建的Lox源代码文件
++ 进入`out/production/lox` 目录
+  + 解释并执行Lox源代码文件 `java cn.gjz.lox.Lox /Users/gjz/Documents/idea-project/lox/src/test01`
+  + 命令行交互的方式启动解释器 `java cn.gjz.lox.Lox`
