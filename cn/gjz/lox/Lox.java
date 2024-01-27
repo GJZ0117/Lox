@@ -24,19 +24,24 @@ public class Lox {
     static boolean hadRuntimeError = false;
 
     public static void main(String[] args) throws IOException {
+        // 参数个数大于1报错
         if (args.length > 1) {
             System.out.println("Usage: jlox [script]");
             System.exit(64);
         } else if (args.length == 1) {
+            // 参数个数等于1，解析参数中提供的源代码文件
             runFile(args[0]);
         } else {
+            // 参数个数为0，命令行交互的方式启动
             runPrompt();
         }
     }
 
     // 从命令行启动jlox并为其提供文件路径，读取文件并执行
     private static void runFile(String path) throws IOException {
+        // 读取源代码文件
         byte[] bytes = Files.readAllBytes(Paths.get(path));
+        // 将源代码文件送到run这个函数中进行处理
         run(new String(bytes, Charset.defaultCharset()));
 
         // 如果代码中出现错误则停止运行并退出
@@ -54,12 +59,13 @@ public class Lox {
         BufferedReader reader = new BufferedReader(input);
 
         while (true) {
-            System.out.println("> ");
+            System.out.print("> ");
             String line = reader.readLine();
-            // 输入Control+D会向程序发出"文件结束"的信号
+            // 输入ctrl+d发出结束信号
             if (line == null) {
                 break;
             }
+            // 将命令行中输入的一行代码送到run函数中进行解析
             run(line);
             // 如果用户输入有误，不应该终止整个会话
             hadError = false;
@@ -69,6 +75,7 @@ public class Lox {
     // 交互式提示符和文件运行工具都通过这个核心函数运行
     private static void run(String source) {
         Scanner scanner = new Scanner(source);
+        // 读出所有token
         List<Token> tokens = scanner.scanTokens();
 
         // 输出所有扫描到的token
@@ -101,12 +108,12 @@ public class Lox {
         interpreter.interpret(statements);
     }
 
-    // 错误处理
+    // 错误处理 传入错误发生的行数和错误信息
     static void error(int line, String message) {
         report(line, " ", message);
     }
 
-    // 错误信息提示
+    // 打印出错误提示 将hadError置为true
     private static void report(int line, String where, String message) {
         System.err.println("[line " + line + "] Error" + where + ": " + message);
         hadError = true;

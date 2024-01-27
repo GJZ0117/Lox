@@ -5,10 +5,10 @@ package cn.gjz.lox;
  */
 
 public class Token {
-    final TokenType type;
-    final String lexeme;
-    final Object literal;
-    final int line;
+    final TokenType type; // token的类型
+    final String lexeme; // 字符表现形式
+    final Object literal; // 变量的实际值
+    final int line; // token所在行号
 
     public Token(TokenType type, String lexeme, Object literal, int line) {
         this.type = type;
